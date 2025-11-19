@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import AddLinkForm from "@/components/AddLinkForm";
 import LinksTable from "@/components/LinksTable";
-import { Link } from "@/lib/db";
+import type { Link as PrismaLink } from '@prisma/client';
 
 export default function Home() {
   const [links, setLinks] = useState<Link[]>([]);
