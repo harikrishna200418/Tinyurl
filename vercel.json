@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": ".next" } }
+  ],
+  "routes": [
+    { "src": "/healthz", "dest": "/api/healthz" },
+    { "src": "/code/(.*)", "dest": "/code/$1" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}
