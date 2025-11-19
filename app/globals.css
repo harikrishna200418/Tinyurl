@@ -1,0 +1,30 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* App container */
+.container {
+	max-width: 960px;
+}
+
+/* Small utility for truncating long urls in table cells */
+.truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* Buttons tweak */
+.btn {
+	@apply inline-flex items-center justify-center px-3 py-1 rounded-md border border-transparent text-sm font-medium;
+}
+
+.btn-primary {
+	@apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.btn-danger {
+	@apply text-red-600 hover:text-red-800;
+}
+

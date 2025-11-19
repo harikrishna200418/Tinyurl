@@ -1,0 +1,24 @@
+
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  // Use SQLite for local development to simplify running without external DB.
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Link {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  url       String
+  code      String   @unique
+  clicks    Int      @default(0)
+  lastClickedAt DateTime?
+
+  @@index([code])
+}
